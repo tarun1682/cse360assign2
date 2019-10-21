@@ -7,7 +7,7 @@
 * Description: The following program is a calculator which adds and subtracts according to the input
 * github link : https://github.com/tarun1682/cse360assign2
 */
-package cse360assign2;
+package cse360assign3;
 
 /*
  * The following class AddingMachine is a public class which acts like a calculator
@@ -19,52 +19,72 @@ package cse360assign2;
 
 public class AddingMachine {
 
-    /* initializes total as a private integer */
-    private int total;
-    /* initializes result as a private string */
-    private String result = " ";
-    /* initializes returnString as a private string */
-    private String returnString = "0";
-    /*
-     * The following constructor AddingMachine, initializes the int variable total to 0.
+    /* initializes total as a protected integer */
+    protected int total;
+    /* initializes result as a protected string */
+    protected String result = " ";
+    /* initializes returnString as a protected string */
+    protected String returnString = "0";
+    /**
+     * constructor AddingMachine
+     *
+     * @param  takes no parameters
+     * initializes total to 0
      */
     public AddingMachine () {
         total = 0;  // not needed - included for clarity
     }
-     /*
-     * The following method getTotal, returns the total value.
+     /**
+     * method getTotal()
+     *
+     * @param takes no parameter
+     * @return    total
      */
     public int getTotal () {
         return total;
     }
-    /*
-     * The following method add, takes a number as parameter and adds it to total
-     * it also stores the value in returnString to print it when called
+    /**
+     * method add()
+     *
+     * @param takes int value as parameter
+     * @return    nothing
+     * re-initializes total to total+value
+     * re-initializes returnString to (returnString) + (" + ") + (value)
      */
     public void add (int value) {
         total+=value;
         returnString +=  " + " + value;
     }
-    /*
-     * The following method subtract, takes a number as parameter and subtracts it from total
-     * it also stores the value in returnString to print it when called
+    /**
+     * method subtract()
+     *
+     * @param takes int value as parameter
+     * @return    nothing
+     * re-initializes total to total-value
+     * re-initializes returnString to (returnString) + (" - ") + (value)
      */
     public void subtract (int value) {
         total-=value;
         returnString += " - " + value ;
     }
-    /*
-     * The following method toString, stores all the calculations done as a string
-     * and returns the string containing the calculations
+    /**
+     * method toString()
+     *
+     * @param takes no parameter
+     * @return    returnString
      */
     public String toString () {
         return returnString; 
     }
-    /*
-     * The following method clear, clears the calculator
+    /**
+     * method clear()
+     *
+     * @param takes no parameter
+     * @return    nothing 
+     * re-initializes returnString to " 0 "
      */
     public void clear() {
         returnString = " 0 ";
-    
+        total = 0;
     }
 }
